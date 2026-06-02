@@ -1,0 +1,5 @@
+STYLE: hand-drawn Swedish storybook illustration (warm Pettson & Findus / Sven Nordqvist mood) — fine ink linework + soft watercolor washes, cozy and whimsical, NOT flat-cartoon, NOT 3D, NOT photo. WORLD: a historic sunlit Visby courtyard flea market — limestone walls, climbing pink roses, string lights, cobblestones, warm late-afternoon light from upper-left. PALETTE: warm parchment, ink brown, foliage green, dusty rose, brass/gold, soft sky blue.
+
+SUBJECT: a wide panoramic EMPTY sunlit Visby courtyard flea market — limestone walls draped in climbing pink roses, hanging string lights, worn cobblestone ground, a couple of empty wooden trestle tables, a rose archway gateway on one side, leafy trees, calm blue sky. Keep the centre/mid-ground OPEN and uncluttered (objects get placed on top later). No people. Aspect 16:9 (~2560x1440).
+
+OUTPUT (full scene): full-bleed illustration, NO black background, no text, no watermark.

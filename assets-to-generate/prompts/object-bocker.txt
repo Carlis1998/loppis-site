@@ -1,0 +1,5 @@
+STYLE: hand-drawn Swedish storybook illustration (warm Pettson & Findus / Sven Nordqvist mood) — fine ink linework + soft watercolor washes, cozy and whimsical, NOT flat-cartoon, NOT 3D, NOT photo. WORLD: a historic sunlit Visby courtyard flea market — limestone walls, climbing pink roses, string lights, cobblestones, warm late-afternoon light from upper-left. PALETTE: warm parchment, ink brown, foliage green, dusty rose, brass/gold, soft sky blue.
+
+SUBJECT (Books): a charming stack of well-loved second-hand books at gentle angles, one open on top with a ribbon bookmark, worn covers in muted reds/greens/creams.
+
+OUTPUT (cut-out): solid PURE-BLACK (#000000) background filling the frame; one subject centered with padding, fully inside frame; faint contact shadow only; AVOID pure/near-black colours INSIDE the subject (use dark brown/charcoal) so the background keys out cleanly; square, >=1536x1536, PNG; no text, no watermark, no border.

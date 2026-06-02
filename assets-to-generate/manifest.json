@@ -1,0 +1,216 @@
+{
+  "$comment": "Tracks every asset slot. status: placeholder = site is using a stand-in; provided = a file is present in incoming/ and wired in. 'incoming' is the filename to drop into assets-to-generate/incoming/. 'target' is where it lands in the app.",
+  "blackBackgroundRequired": [
+    "object-bocker",
+    "object-kort",
+    "object-samlarprylar",
+    "object-elektronik",
+    "object-klader",
+    "object-blandat",
+    "host-character",
+    "decor-cat",
+    "decor-birds",
+    "frame-ornaments",
+    "object-bocker-rain",
+    "object-kort-rain",
+    "object-samlarprylar-rain",
+    "object-elektronik-rain",
+    "object-klader-rain",
+    "object-blandat-rain",
+    "sign-open"
+  ],
+  "fullSceneNoBlack": [
+    "scene-background-landscape",
+    "scene-background-portrait",
+    "intro-splash",
+    "paper-texture",
+    "scene-background-landscape-rain",
+    "scene-background-portrait-rain",
+    "closed-splash"
+  ],
+  "slots": [
+    {
+      "id": "scene-background-landscape",
+      "incoming": "scene-background-landscape.png",
+      "target": "public/scene/scene-background-landscape.png",
+      "kind": "background",
+      "status": "provided"
+    },
+    {
+      "id": "scene-background-portrait",
+      "incoming": "scene-background-portrait.png",
+      "target": "public/scene/scene-background-portrait.png",
+      "kind": "background",
+      "status": "provided"
+    },
+    {
+      "id": "object-bocker",
+      "incoming": "object-bocker.png",
+      "target": "public/scene/objects/bocker.png",
+      "kind": "object",
+      "status": "provided"
+    },
+    {
+      "id": "object-kort",
+      "incoming": "object-kort.png",
+      "target": "public/scene/objects/kort.png",
+      "kind": "object",
+      "status": "provided"
+    },
+    {
+      "id": "object-samlarprylar",
+      "incoming": "object-samlarprylar.png",
+      "target": "public/scene/objects/samlarprylar.png",
+      "kind": "object",
+      "status": "provided"
+    },
+    {
+      "id": "object-elektronik",
+      "incoming": "object-elektronik.png",
+      "target": "public/scene/objects/elektronik.png",
+      "kind": "object",
+      "status": "provided"
+    },
+    {
+      "id": "object-klader",
+      "incoming": "object-klader.png",
+      "target": "public/scene/objects/klader.png",
+      "kind": "object",
+      "status": "provided"
+    },
+    {
+      "id": "object-blandat",
+      "incoming": "object-blandat.png",
+      "target": "public/scene/objects/blandat.png",
+      "kind": "object",
+      "status": "provided"
+    },
+    {
+      "id": "intro-splash",
+      "incoming": "intro-splash.png",
+      "target": "public/scene/intro-splash.png",
+      "kind": "background",
+      "status": "provided"
+    },
+    {
+      "id": "host-character",
+      "incoming": "host-character.png",
+      "target": "public/scene/host-character.png",
+      "kind": "object",
+      "optional": true,
+      "status": "placeholder"
+    },
+    {
+      "id": "decor-cat",
+      "incoming": "decor-cat.png",
+      "target": "public/scene/decor/cat.png",
+      "kind": "decor",
+      "optional": true,
+      "status": "placeholder"
+    },
+    {
+      "id": "decor-birds",
+      "incoming": "decor-birds.png",
+      "target": "public/scene/decor/birds.png",
+      "kind": "decor",
+      "optional": true,
+      "status": "placeholder"
+    },
+    {
+      "id": "frame-ornaments",
+      "incoming": "frame-ornaments.png",
+      "target": "public/scene/decor/frame-ornaments.png",
+      "kind": "decor",
+      "optional": true,
+      "status": "provided"
+    },
+    {
+      "id": "paper-texture",
+      "incoming": "paper-texture.png",
+      "target": "public/scene/paper-texture.png",
+      "kind": "texture",
+      "optional": true,
+      "status": "placeholder"
+    },
+
+    {
+      "id": "scene-background-landscape-rain",
+      "incoming": "scene-background-landscape-rain.png",
+      "target": "public/scene/scene-background-landscape-rain.png",
+      "kind": "background",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "scene-background-portrait-rain",
+      "incoming": "scene-background-portrait-rain.png",
+      "target": "public/scene/scene-background-portrait-rain.png",
+      "kind": "background",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "object-bocker-rain",
+      "incoming": "object-bocker-rain.png",
+      "target": "public/scene/objects/bocker-rain.png",
+      "kind": "object",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "object-kort-rain",
+      "incoming": "object-kort-rain.png",
+      "target": "public/scene/objects/kort-rain.png",
+      "kind": "object",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "object-samlarprylar-rain",
+      "incoming": "object-samlarprylar-rain.png",
+      "target": "public/scene/objects/samlarprylar-rain.png",
+      "kind": "object",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "object-elektronik-rain",
+      "incoming": "object-elektronik-rain.png",
+      "target": "public/scene/objects/elektronik-rain.png",
+      "kind": "object",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "object-klader-rain",
+      "incoming": "object-klader-rain.png",
+      "target": "public/scene/objects/klader-rain.png",
+      "kind": "object",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "object-blandat-rain",
+      "incoming": "object-blandat-rain.png",
+      "target": "public/scene/objects/blandat-rain.png",
+      "kind": "object",
+      "weather": "rain",
+      "status": "provided"
+    },
+    {
+      "id": "sign-open",
+      "incoming": "sign-open.png",
+      "target": "public/scene/sign-open.png",
+      "kind": "decor",
+      "status": "provided"
+    },
+    {
+      "id": "closed-splash",
+      "incoming": "closed-splash.png",
+      "target": "public/scene/closed-splash.png",
+      "kind": "background",
+      "weather": "rain",
+      "status": "provided"
+    }
+  ]
+}
