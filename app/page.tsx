@@ -10,12 +10,87 @@ import { FAQ } from "@/components/FAQ";
 import { ScrollTracker } from "@/components/ScrollTracker";
 import { getWeatherStatus } from "@/lib/weather";
 import { providedSlots } from "@/lib/provided-assets";
+import { site } from "@/content/site";
+import { categories } from "@/content/categories";
+
+// Swedish (canonical) structured data. Lives on the root page, not the shared
+// layout, so /en and /de carry only their own locale's JSON-LD.
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "Store"],
+  name: site.siteName,
+  description: site.seoDescription,
+  url: site.siteUrl,
+  image: `${site.siteUrl}/images/courtyard-lights.jpg`,
+  hasMap: site.mapUrl,
+  slogan: site.subheadline,
+  knowsLanguage: ["sv", "en", "de"],
+  inLanguage: "sv-SE",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address,
+    addressLocality: site.city,
+    addressCountry: "SE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: site.coordinates.lat,
+    longitude: site.coordinates.lon,
+  },
+  areaServed: { "@type": "City", name: site.city },
+  makesOffer: site.categories.map((category) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Thing", name: category },
+  })),
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  inLanguage: "sv-SE",
+  mainEntity: site.faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const offerCatalogJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Sortiment på Innegårdsloppis",
+  itemListElement: categories.map((c) => ({
+    "@type": "OfferCatalog",
+    name: c.name,
+    description: c.whatYoullFind,
+  })),
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.siteName,
+  url: site.siteUrl,
+  inLanguage: "sv-SE",
+  description: site.seoDescription,
+};
 
 export default async function HomePage() {
   const weather = await getWeatherStatus();
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            localBusinessJsonLd,
+            faqJsonLd,
+            websiteJsonLd,
+            offerCatalogJsonLd,
+          ]),
+        }}
+      />
       <IntroSplash />
       <WeatherBanner weather={weather} />
       <WeatherModuleTracker weatherStatus={weather.status} />

@@ -9,13 +9,13 @@ export const site = {
   ogDescription:
     "Stor innegårdsloppis i centrala Visby. Böcker, samlarprylar, elektronik och blandade fynd på Södra Murgatan 4.",
 
-  // Core identity — these drive SEO, do not change without rebuilding canonical text
+  // Core identity, these drive SEO, do not change without rebuilding canonical text
   headline: {
     sodertorg: "Loppis nära Södertorg i Visby",
     courtyard: "Stor innegårdsloppis i Visby",
   },
   subheadline:
-    "Välkommen till Innegårdsloppis på Södra Murgatan 4 — en stor innergård i Visby med böcker, samlarprylar, elektronik och blandade fynd under sommaren.",
+    "Välkommen till Innegårdsloppis på Södra Murgatan 4, en stor innergård i Visby med böcker, samlarprylar, elektronik och blandade fynd under sommaren.",
 
   address: "Södra Murgatan 4",
   city: "Visby",
@@ -43,7 +43,7 @@ export const site = {
 
   whySpecial: [
     "Stor historisk innegård i centrala Visby",
-    "Nära Södertorg — lätt att hitta till fots",
+    "Nära Södertorg, lätt att hitta till fots",
     "Skiftande sortiment varje dag",
     "Sommarstämning och chansen att göra fynd",
   ],
@@ -63,7 +63,7 @@ export const site = {
     },
     {
       src: "/images/pokemon-cards.jpg",
-      alt: "Pokémon-kort i genomskinlig plastlåda — samlarprylar",
+      alt: "Pokémon-kort i genomskinlig plastlåda, samlarprylar",
     },
     {
       src: "/images/clothing-rack.jpg",
@@ -110,7 +110,7 @@ export const site = {
     },
     {
       q: "Ligger ni nära Södertorg?",
-      a: "Ja, vi ligger alldeles nära Södertorg i centrala Visby — lätt att hitta till fots.",
+      a: "Ja, vi ligger alldeles nära Södertorg i centrala Visby, lätt att hitta till fots.",
     },
     {
       q: "Vad säljer ni?",
@@ -122,7 +122,7 @@ export const site = {
     },
     {
       q: "Hur vet jag om ni är öppna idag?",
-      a: "Kom förbi om vädret är fint — öppettider uppdateras löpande under säsong.",
+      a: "Kom förbi om vädret är fint, öppettider uppdateras löpande under säsong.",
     },
     {
       q: "Kan jag hitta böcker och samlarprylar?",

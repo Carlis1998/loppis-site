@@ -2,7 +2,7 @@ import Link from "next/link";
 import { locales, localeNames, localePath, type Locale } from "@/content/locales";
 
 /**
- * Minimal pill-style language switcher. Server component — each option is just a
+ * Minimal pill-style language switcher. Server component, each option is just a
  * link to that locale's path, so it works with JS disabled and needs no client state.
  * The active locale is highlighted and marked aria-current.
  */

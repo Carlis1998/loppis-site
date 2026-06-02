@@ -1,7 +1,7 @@
 /**
  * Pure-CSS falling rain for the "closed / bad weather" scene mode.
  * Two parallax layers of thin angled streaks plus a cool darkening wash.
- * Decorative only — hidden from assistive tech and calmed by prefers-reduced-motion.
+ * Decorative only, hidden from assistive tech and calmed by prefers-reduced-motion.
  */
 const streak = (alpha: number) =>
   `repeating-linear-gradient(102deg, transparent 0 9px, rgba(255,255,255,${alpha}) 9px 10px)`;

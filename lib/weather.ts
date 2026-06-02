@@ -69,15 +69,22 @@ export async function getWeatherStatus(): Promise<WeatherResult> {
     const { status, isGoodWeather } = parseWeatherCode(code, isDay);
     const nextGoodDate = isGoodWeather ? null : nextGoodWeatherDate(data.daily);
 
+    // Status-aware lead line. The reopening promise is left to the banner, which
+    // can name the specific next-sunny weekday from nextGoodDate.
+    const bannerCopy =
+      status === "sunny"
+        ? "Soligt i Visby idag, innegården är öppen."
+        : status === "cloudy"
+          ? "Mulet men uppehåll i Visby, innegården är öppen."
+          : "Det regnar i Visby just nu, innegården är stängd.";
+
     return {
       status,
       isGoodWeather,
       weatherStatus: status,
       temperature: typeof temp === "number" ? Math.round(temp) : null,
       nextGoodDate,
-      bannerCopy: isGoodWeather
-        ? "Soligt i Visby idag — innegården är öppen."
-        : "Det regnar i Visby just nu — innegården är stängd. Vi öppnar vid fint väder.",
+      bannerCopy,
     };
   } catch {
     return {

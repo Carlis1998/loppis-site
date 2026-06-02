@@ -5,8 +5,8 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 
 /**
  * Standalone, fully translated visitor page for /en and /de (and the source of
- * truth for sv). Clean static HTML — what it is, where it is, what you'll find,
- * opening guidance, FAQ, map — that funnels visitors to the interactive Swedish
+ * truth for sv). Clean static HTML, what it is, where it is, what you'll find,
+ * opening guidance, FAQ, map, that funnels visitors to the interactive Swedish
  * courtyard at "/". One renderer, keyed by locale (DRY).
  */
 export function LocalizedInfoPage({ locale }: { locale: Locale }) {

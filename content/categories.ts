@@ -20,22 +20,22 @@ export const categories: Category[] = [
     id: "bocker",
     name: "Böcker",
     blurb:
-      "Bord fulla med begagnade böcker — romaner, barnböcker och oväntade pärlor på svenska och engelska.",
+      "Bord fulla med begagnade böcker, romaner, barnböcker och oväntade pärlor på svenska och engelska.",
     whatYoullFind:
-      "Romaner, barnböcker, fackböcker och pocket — på svenska och engelska.",
+      "Romaner, barnböcker, fackböcker och pocket, på svenska och engelska.",
     priceVibe: "Fynd från 10 kr",
     availability: ÖPPET,
     objectAsset: "object-bocker",
     photos: [
       { src: "/images/books-table.jpg", alt: "Böcker arrangerade på bord i innegården" },
     ],
-    coords: { landscape: { x: 22, y: 62, scale: 1 }, portrait: { x: 30, y: 30, scale: 1 } },
+    coords: { landscape: { x: 20, y: 78, scale: 1 }, portrait: { x: 42, y: 54, scale: 0.92 } },
   },
   {
     id: "kort",
     name: "Pokémon- & samlarkort",
     blurb:
-      "En låda med blandade kort att botanisera i — för både nybörjare och samlare.",
+      "En låda med blandade kort att botanisera i, för både nybörjare och samlare.",
     whatYoullFind: "Pokémon-kort och andra samlarkort, blandade lådor att gräva i.",
     priceVibe: "Från någon krona styck",
     availability: ÖPPET,
@@ -43,12 +43,12 @@ export const categories: Category[] = [
     photos: [
       { src: "/images/pokemon-cards.jpg", alt: "Pokémon-kort i genomskinlig plastlåda" },
     ],
-    coords: { landscape: { x: 44, y: 70, scale: 0.9 }, portrait: { x: 66, y: 42, scale: 0.9 } },
+    coords: { landscape: { x: 49, y: 75, scale: 0.9 }, portrait: { x: 66, y: 44, scale: 0.62 } },
   },
   {
     id: "samlarprylar",
     name: "Samlarprylar",
-    blurb: "Porslin, prydnader och kuriosa — små skatter med historia.",
+    blurb: "Porslin, prydnader och kuriosa, små skatter med historia.",
     whatYoullFind: "Porslin, figuriner, mässing och annan kuriosa.",
     priceVibe: "Blandade priser",
     availability: ÖPPET,
@@ -56,7 +56,7 @@ export const categories: Category[] = [
     photos: [
       { src: "/images/items-table.jpg", alt: "Prylar och föremål upplagda på bord" },
     ],
-    coords: { landscape: { x: 62, y: 58, scale: 0.95 }, portrait: { x: 32, y: 56, scale: 0.95 } },
+    coords: { landscape: { x: 63, y: 57, scale: 0.7 }, portrait: { x: 27, y: 66, scale: 0.72 } },
   },
   {
     id: "elektronik",
@@ -69,7 +69,7 @@ export const categories: Category[] = [
     photos: [
       { src: "/images/display-table.jpg", alt: "Bord med prylar och fynd i innegården" },
     ],
-    coords: { landscape: { x: 76, y: 66, scale: 0.9 }, portrait: { x: 68, y: 66, scale: 0.9 } },
+    coords: { landscape: { x: 85, y: 82, scale: 0.9 }, portrait: { x: 72, y: 67, scale: 0.82 } },
   },
   {
     id: "klader",
@@ -82,13 +82,13 @@ export const categories: Category[] = [
     photos: [
       { src: "/images/clothing-rack.jpg", alt: "Klädstång med olika plagg i sommarmiljö" },
     ],
-    coords: { landscape: { x: 34, y: 48, scale: 0.85 }, portrait: { x: 34, y: 80, scale: 0.85 } },
+    coords: { landscape: { x: 40, y: 61, scale: 0.85 }, portrait: { x: 34, y: 80, scale: 0.85 } },
   },
   {
     id: "blandat",
     name: "Blandade fynd",
     blurb:
-      "Allt möjligt — kom och gräv i lådorna, sortimentet skiftar varje dag.",
+      "Allt möjligt, kom och gräv i lådorna, sortimentet skiftar varje dag.",
     whatYoullFind: "Köksprylar, leksaker, tavlor och allt däremellan.",
     priceVibe: "Allt möjligt, ofta en tia",
     availability: ÖPPET,
@@ -96,6 +96,6 @@ export const categories: Category[] = [
     photos: [
       { src: "/images/loppis-items.jpg", alt: "Blandade loppisfynd på bord i innegården" },
     ],
-    coords: { landscape: { x: 54, y: 50, scale: 0.85 }, portrait: { x: 66, y: 80, scale: 0.85 } },
+    coords: { landscape: { x: 60, y: 72, scale: 0.85 }, portrait: { x: 58, y: 81, scale: 0.85 } },
   },
 ];

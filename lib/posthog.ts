@@ -21,7 +21,7 @@ export function trackEvent(event: string, props?: EventProperties) {
 }
 
 /**
- * Canonical event names — use these everywhere, never raw strings.
+ * Canonical event names, use these everywhere, never raw strings.
  * Events omitted from MVP (no UI yet):
  *   - contact_click: no phone/email in content/site.ts
  *   - language_toggle_de/en: LanguageBlocks are static; add if interactive toggle is built

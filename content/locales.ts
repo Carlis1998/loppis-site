@@ -57,7 +57,7 @@ export type WeatherCopy = {
   closedTitle: string;
   closedLead: string;
   reopen: string;
-  /** Given a localized weekday, e.g. "Solen är tillbaka på torsdag — välkommen då!" */
+  /** Given a localized weekday, e.g. "Solen är tillbaka på torsdag, välkommen då!" */
   nextGood: (weekday: string) => string;
   nextGoodUnknown: string;
   packedAway: string;
@@ -71,11 +71,11 @@ export const weatherCopy: Record<Locale, WeatherCopy> = {
   sv: {
     openBadge: "Öppet vid fint väder",
     closedBadge: "Stängt idag",
-    closedTitle: "Stängt — det regnar i Visby",
+    closedTitle: "Stängt, det regnar i Visby",
     closedLead:
       "Innegården håller stängt när vädret är dåligt. Sakerna ligger inplastade och torra tills solen är tillbaka.",
     reopen: "Vi öppnar igen vid fint väder under sommarsäsongen.",
-    nextGood: (d) => `Solen ser ut att vara tillbaka på ${d} — välkommen då!`,
+    nextGood: (d) => `Solen ser ut att vara tillbaka på ${d}, välkommen då!`,
     nextGoodUnknown: "Kika förbi igen när solen tittar fram.",
     packedAway: "Inplastat och undanställt tills solen är tillbaka. ☂️",
     previewTag: "Förhandsvisning",
@@ -86,11 +86,11 @@ export const weatherCopy: Record<Locale, WeatherCopy> = {
   en: {
     openBadge: "Open in fair weather",
     closedBadge: "Closed today",
-    closedTitle: "Closed — it's raining in Visby",
+    closedTitle: "Closed, it's raining in Visby",
     closedLead:
       "The courtyard stays shut in bad weather. Everything is wrapped up and kept dry until the sun is back.",
     reopen: "We reopen in fair weather during the summer season.",
-    nextGood: (d) => `The sun looks set to return on ${d} — come by then!`,
+    nextGood: (d) => `The sun looks set to return on ${d}, come by then!`,
     nextGoodUnknown: "Check back when the sun comes out.",
     packedAway: "Wrapped up and put away until the sun returns. ☂️",
     previewTag: "Preview",
@@ -101,11 +101,11 @@ export const weatherCopy: Record<Locale, WeatherCopy> = {
   de: {
     openBadge: "Geöffnet bei schönem Wetter",
     closedBadge: "Heute geschlossen",
-    closedTitle: "Geschlossen — es regnet in Visby",
+    closedTitle: "Geschlossen, es regnet in Visby",
     closedLead:
       "Der Innenhof bleibt bei schlechtem Wetter geschlossen. Alles ist eingepackt und bleibt trocken, bis die Sonne zurück ist.",
     reopen: "Wir öffnen wieder bei schönem Wetter in der Sommersaison.",
-    nextGood: (d) => `Die Sonne kommt voraussichtlich am ${d} zurück — dann gerne vorbeischauen!`,
+    nextGood: (d) => `Die Sonne kommt voraussichtlich am ${d} zurück, dann gerne vorbeischauen!`,
     nextGoodUnknown: "Schau wieder vorbei, wenn die Sonne scheint.",
     packedAway: "Eingepackt und verstaut, bis die Sonne zurückkommt. ☂️",
     previewTag: "Vorschau",
@@ -116,7 +116,7 @@ export const weatherCopy: Record<Locale, WeatherCopy> = {
 };
 
 // ---------------------------------------------------------------------------
-// Standalone localized visitor pages (/en, /de) — and the sv source of truth
+// Standalone localized visitor pages (/en, /de), and the sv source of truth
 // ---------------------------------------------------------------------------
 
 export type LandingCategory = { name: string; desc: string };
@@ -155,7 +155,7 @@ export const landing: Record<Locale, LandingContent> = {
     badge: "Besöksinfo",
     headline: "Innegårdsloppis i Visby",
     intro:
-      "En sommaröppen loppis på en stor, historisk innergård i centrala Visby — böcker, samlarprylar, elektronik och blandade fynd, alldeles nära Södertorg.",
+      "En sommaröppen loppis på en stor, historisk innergård i centrala Visby, böcker, samlarprylar, elektronik och blandade fynd, alldeles nära Södertorg.",
     visitHeading: "Hitta hit",
     addressLabel: "Adress",
     landmarkLabel: "Landmärke",
@@ -175,7 +175,7 @@ export const landing: Record<Locale, LandingContent> = {
     whyHeading: "Varför besöka oss",
     why: [
       "Stor historisk innegård i centrala Visby",
-      "Nära Södertorg — lätt att hitta till fots",
+      "Nära Södertorg, lätt att hitta till fots",
       "Skiftande sortiment varje dag",
       "Sommarstämning och chansen att göra fynd",
     ],
@@ -184,7 +184,7 @@ export const landing: Record<Locale, LandingContent> = {
       { q: "Var ligger loppisen?", a: "På Södra Murgatan 4 i Visby, nära Södertorg." },
       { q: "När är ni öppna?", a: "Vid bra väder under sommarsäsongen. Öppettider uppdateras löpande." },
       { q: "Vad säljer ni?", a: "Böcker, samlarprylar, Pokémon-kort, elektronik och blandade fynd." },
-      { q: "Hur vet jag om ni är öppna idag?", a: "Kom förbi om vädret är fint — sidan visar dagens väderläge." },
+      { q: "Hur vet jag om ni är öppna idag?", a: "Kom förbi om vädret är fint, sidan visar dagens väderläge." },
     ],
     experienceHeading: "Gå in på innegården",
     experienceText:
@@ -198,13 +198,13 @@ export const landing: Record<Locale, LandingContent> = {
     badge: "Visitor info",
     headline: "Courtyard Flea Market in Visby",
     intro:
-      "A seasonal flea market in a large, historic inner courtyard in central Visby — books, collectibles, electronics and changing finds, right by Södertorg.",
+      "A seasonal flea market in a large, historic inner courtyard in central Visby, books, collectibles, electronics and changing finds, right by Södertorg.",
     visitHeading: "Getting here",
     addressLabel: "Address",
     landmarkLabel: "Landmark",
     openingLabel: "Opening hours",
     openingText:
-      "We open in fair weather during the summer season. Hours are updated as the season goes — there are no fixed daily hours.",
+      "We open in fair weather during the summer season. Hours are updated as the season goes, there are no fixed daily hours.",
     mapCta: "Open in Google Maps",
     findHeading: "What you'll find",
     categories: [
@@ -218,7 +218,7 @@ export const landing: Record<Locale, LandingContent> = {
     whyHeading: "Why visit",
     why: [
       "A large historic courtyard in central Visby",
-      "Near Södertorg — easy to reach on foot",
+      "Near Södertorg, easy to reach on foot",
       "A changing selection every day",
       "Summer atmosphere and the thrill of a good find",
     ],
@@ -227,7 +227,7 @@ export const landing: Record<Locale, LandingContent> = {
       { q: "Where is the flea market?", a: "At Södra Murgatan 4 in Visby, close to Södertorg in the old town." },
       { q: "When are you open?", a: "In fair weather during the summer season. There are no fixed daily hours." },
       { q: "What do you sell?", a: "Books, collectibles, Pokémon cards, electronics and mixed finds." },
-      { q: "How do I know if you're open today?", a: "Come by when the weather is nice — the site shows today's live weather status." },
+      { q: "How do I know if you're open today?", a: "Come by when the weather is nice, the site shows today's live weather status." },
     ],
     experienceHeading: "Step into the courtyard",
     experienceText:
@@ -241,13 +241,13 @@ export const landing: Record<Locale, LandingContent> = {
     badge: "Besucherinfo",
     headline: "Innenhof-Flohmarkt in Visby",
     intro:
-      "Ein saisonaler Flohmarkt in einem großen, historischen Innenhof im Zentrum von Visby — Bücher, Sammlerstücke, Elektronik und wechselnde Fundstücke, direkt am Södertorg.",
+      "Ein saisonaler Flohmarkt in einem großen, historischen Innenhof im Zentrum von Visby, Bücher, Sammlerstücke, Elektronik und wechselnde Fundstücke, direkt am Södertorg.",
     visitHeading: "Anfahrt",
     addressLabel: "Adresse",
     landmarkLabel: "Wahrzeichen",
     openingLabel: "Öffnungszeiten",
     openingText:
-      "Wir öffnen bei schönem Wetter in der Sommersaison. Die Zeiten werden laufend aktualisiert — es gibt keine festen täglichen Öffnungszeiten.",
+      "Wir öffnen bei schönem Wetter in der Sommersaison. Die Zeiten werden laufend aktualisiert, es gibt keine festen täglichen Öffnungszeiten.",
     mapCta: "In Google Maps öffnen",
     findHeading: "Das findest du",
     categories: [
@@ -261,7 +261,7 @@ export const landing: Record<Locale, LandingContent> = {
     whyHeading: "Warum vorbeikommen",
     why: [
       "Ein großer historischer Innenhof im Zentrum von Visby",
-      "Nahe Södertorg — bequem zu Fuß erreichbar",
+      "Nahe Södertorg, bequem zu Fuß erreichbar",
       "Jeden Tag ein wechselndes Sortiment",
       "Sommerstimmung und die Freude am guten Fund",
     ],
@@ -270,7 +270,7 @@ export const landing: Record<Locale, LandingContent> = {
       { q: "Wo ist der Flohmarkt?", a: "In der Södra Murgatan 4 in Visby, nahe dem Södertorg in der Altstadt." },
       { q: "Wann habt ihr geöffnet?", a: "Bei schönem Wetter in der Sommersaison. Es gibt keine festen täglichen Öffnungszeiten." },
       { q: "Was verkauft ihr?", a: "Bücher, Sammlerstücke, Pokémonkarten, Elektronik und gemischte Fundstücke." },
-      { q: "Woher weiß ich, ob heute geöffnet ist?", a: "Komm vorbei, wenn das Wetter schön ist — die Seite zeigt den aktuellen Wetterstatus." },
+      { q: "Woher weiß ich, ob heute geöffnet ist?", a: "Komm vorbei, wenn das Wetter schön ist, die Seite zeigt den aktuellen Wetterstatus." },
     ],
     experienceHeading: "Tritt in den Innenhof",
     experienceText:

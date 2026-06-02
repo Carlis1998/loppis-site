@@ -121,7 +121,7 @@ export function CourtyardScene({
         />
       ))}
 
-      {/* Status chip — triple-tap to preview the other weather mode */}
+      {/* Status chip, triple-tap to preview the other weather mode */}
       <button
         type="button"
         onClick={onChipTap}
@@ -149,7 +149,7 @@ export function CourtyardScene({
         {t.progress(seen.size, categories.length)}
       </p>
 
-      {/* Closed banner — clearly shut, still over a tappable scene */}
+      {/* Closed banner, clearly shut, still over a tappable scene */}
       {closed && (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-4 pb-5">
           <div className="pointer-events-auto max-w-md rounded-2xl bg-[#1b2530]/85 px-5 py-4 text-center text-[#eef3f8] shadow-2xl ring-1 ring-white/10 backdrop-blur">

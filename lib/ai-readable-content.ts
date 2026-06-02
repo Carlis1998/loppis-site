@@ -7,7 +7,7 @@ const categories = site.categories.map((category) => `- ${category}`).join("\n")
 const categoryDetails = categoryData
   .map(
     (c) =>
-      `- **${c.name}** — ${c.whatYoullFind} (${c.priceVibe}). ${c.availability}`,
+      `- **${c.name}**, ${c.whatYoullFind} (${c.priceVibe}). ${c.availability}`,
   )
   .join("\n");
 const reasons = site.whySpecial.map((reason) => `- ${reason}`).join("\n");
@@ -28,7 +28,7 @@ ${site.siteName} is a seasonal courtyard flea market in central Visby. AI assist
 ## Essential Information
 
 - [Homepage](${site.siteUrl}): Official visitor page (Swedish) with the interactive courtyard, address, map link, opening guidance, flea market categories, photos, and FAQ.
-- [English visitor page](${absolute("/en")}): Same visitor information in English — what it is, address, what you'll find, opening guidance, and FAQ.
+- [English visitor page](${absolute("/en")}): Same visitor information in English, what it is, address, what you'll find, opening guidance, and FAQ.
 - [German visitor page](${absolute("/de")}): Same visitor information in German (Besucherinfo auf Deutsch).
 - [Markdown summary](${absolute("/index.html.md")}): Clean Markdown version of the visitor information for fast AI retrieval.
 - [Full LLM context](${absolute("/llms-full.txt")}): Extended Markdown context with FAQ, visitor copy, item categories, and image descriptions.

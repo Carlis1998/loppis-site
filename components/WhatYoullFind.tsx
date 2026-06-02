@@ -29,7 +29,7 @@ export function WhatYoullFind() {
           ))}
         </ul>
         <p className="mt-10 text-center text-sm text-[color:var(--color-ink-muted)]">
-          Sortimentet skiftar löpande — kom förbi för att se vad som finns idag.
+          Sortimentet skiftar löpande, kom förbi för att se vad som finns idag.
         </p>
       </div>
     </section>
