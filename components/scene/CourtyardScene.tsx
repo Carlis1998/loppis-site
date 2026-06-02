@@ -16,7 +16,6 @@ import {
 import type { WeatherStatus } from "@/lib/weather";
 import { SceneObject } from "./SceneObject";
 import { InspectionCard } from "./InspectionCard";
-import { RainOverlay } from "./RainOverlay";
 import { BackgroundPlaceholder } from "./placeholders";
 import { trackEvent, Events } from "@/lib/posthog";
 
@@ -28,7 +27,7 @@ type SceneWeather = {
 
 /**
  * The interactive courtyard. Reacts to live weather: fair weather → open & sunny,
- * bad weather → closed & rainy (rain art, falling-rain overlay, "closed" copy).
+ * bad weather → closed & rainy (rain background art + "closed" copy).
  * A hidden triple-tap on the status chip lets staff preview the other mode.
  */
 export function CourtyardScene({
@@ -64,7 +63,7 @@ export function CourtyardScene({
 
   const bgSlot = backgroundSlot(orientation, closed);
   const bgProvided = hasRealAsset(bgSlot, provided);
-  // graceful fallback: if a rainy bg is missing, reuse the sunny art (RainOverlay still sells the mood)
+  // graceful fallback: if a rainy bg is missing, reuse the sunny art so the scene still renders
   const bgFallbackProvided = hasRealAsset(backgroundSlot(orientation, false), provided);
   const bgSrc = backgroundPath(orientation, closed && bgProvided);
 
@@ -105,8 +104,6 @@ export function CourtyardScene({
       ) : (
         <BackgroundPlaceholder />
       )}
-
-      {closed && <RainOverlay />}
 
       {categories.map((c) => (
         <SceneObject

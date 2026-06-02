@@ -35,25 +35,6 @@
   }
 }
 
-/* Weather-reactive scene: falling rain (two parallax layers) */
-@keyframes rain-fall-near {
-  to {
-    background-position:
-      6% 120%,
-      26% 120%,
-      52% 120%,
-      78% 120%;
-  }
-}
-@keyframes rain-fall-far {
-  to {
-    background-position:
-      14% 120%,
-      40% 120%,
-      66% 120%,
-      90% 120%;
-  }
-}
 @keyframes sign-swing {
   0%,
   100% {
