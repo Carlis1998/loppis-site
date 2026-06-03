@@ -23,9 +23,9 @@ export function IntroSplash() {
       <p className="relative text-sm uppercase tracking-[0.2em] text-[#f3d9b0] drop-shadow">
         {site.address} · {site.nearbyLandmark}
       </p>
-      <h1 className="mt-4 max-w-xl font-display text-4xl font-extrabold leading-tight md:text-6xl">
+      <p className="mt-4 max-w-xl font-display text-4xl font-extrabold leading-tight md:text-6xl">
         Stig in på innegården
-      </h1>
+      </p>
       <p className="mt-4 max-w-md text-[#e8dcc4]">{site.subheadline}</p>
       <button
         type="button"

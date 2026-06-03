@@ -13,6 +13,12 @@ const figtree = Figtree({
   display: "swap",
 });
 
+// Search-engine ownership verification. Paste the codes Google Search Console
+// and Bing Webmaster Tools give you into these env vars (no quotes) and redeploy;
+// until then the tags are simply omitted. Both also support DNS/file verification.
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   title: site.seoTitle,
   description: site.seoDescription,
@@ -24,14 +30,31 @@ export const metadata: Metadata = {
     locale: "sv_SE",
     siteName: site.siteName,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: site.ogTitle,
+    description: site.ogDescription,
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   alternates: {
     canonical: "/",
     languages: hreflangAlternates,
   },
+  ...((googleVerification || bingVerification) && {
+    verification: {
+      ...(googleVerification && { google: googleVerification }),
+      ...(bingVerification && { other: { "msvalidate.01": bingVerification } }),
+    },
+  }),
 };
 
 export default function RootLayout({

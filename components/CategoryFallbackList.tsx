@@ -15,9 +15,9 @@ export function CategoryFallbackList() {
       aria-label="Vad som säljs på loppisen"
       className="mx-auto max-w-5xl px-6 py-16"
     >
-      <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
-        Det här hittar du på innegården
-      </h2>
+      <h1 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
+        Innegårdsloppis i Visby nära Södertorg
+      </h1>
       <p className="mx-auto mt-3 max-w-2xl text-center text-[color:var(--color-ink-muted)]">
         {site.subheadline}
       </p>
