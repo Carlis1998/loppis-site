@@ -18,9 +18,13 @@ export function LocalizedInfoPage({ locale }: { locale: Locale }) {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "Store"],
     name: site.siteName,
+    alternateName: ["Innegårdsloppis Visby", "Loppis nära Södertorg"],
     description: t.metaDescription,
     url: pageUrl,
+    image: [`${site.siteUrl}/images/courtyard-lights.jpg`],
     inLanguage: localeTag[locale],
+    priceRange: "$",
+    knowsLanguage: ["sv", "en", "de"],
     hasMap: site.mapUrl,
     address: {
       "@type": "PostalAddress",
