@@ -27,11 +27,12 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          GITHUB_PAGES: "true"
-          GITHUB_PAGES_REPO: "loppis-site"
-          NEXT_PUBLIC_BASE_PATH: "/loppis-site"
-          NEXT_PUBLIC_SITE_URL: "https://carlis1998.github.io/loppis-site"
+          NEXT_PUBLIC_SITE_URL: "https://innegardsloppis.se"
       - run: touch out/.nojekyll
+      # Custom apex domain. The CNAME file must live in the published artifact so
+      # GitHub Pages keeps the domain bound on every Actions deploy (a deploy
+      # without it silently unsets the custom domain).
+      - run: echo "innegardsloppis.se" > out/CNAME
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
