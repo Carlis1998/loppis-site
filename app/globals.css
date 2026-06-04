@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-coral: #ff385c;
-  --color-coral-hover: #e0314f;
-  --color-coral-soft: #fff0f3;
+  /* Ownable warm terracotta-coral — harmonises with the parchment + bark
+     courtyard palette, instead of borrowing Airbnb's #ff385c. */
+  --color-coral: #df5440;
+  --color-coral-hover: #c4452f;
+  --color-coral-soft: #fbeee8;
   --color-ink: #222222;
-  --color-ink-muted: #717171;
-  --color-hairline: #ebebeb;
+  --color-ink-muted: #6f6a61;
+  /* Neutrals warmed off cool grey toward cream so sections sit with the courtyard. */
+  --color-hairline: #e9e3d9;
   --color-surface: #ffffff;
-  --color-surface-alt: #f7f7f7;
+  --color-surface-alt: #f8f5ef;
 
+  /* Display = Fraunces (vintage serif) for hero + headings; body/UI stays Figtree. */
   --font-display:
-    var(--font-figtree), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    sans-serif;
+    var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-sans:
     var(--font-figtree), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
@@ -32,6 +35,17 @@
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Idle float to hint that courtyard objects are interactive (unseen only). */
+@keyframes object-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 

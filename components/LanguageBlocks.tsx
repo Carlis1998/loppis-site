@@ -12,7 +12,7 @@ export function LanguageBlocks() {
           <span className="inline-flex items-center rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)] ring-1 ring-[color:var(--color-hairline)]">
             Deutsch
           </span>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-[color:var(--color-ink)]">
+          <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-[color:var(--color-ink)]">
             {site.german.headline}
           </h2>
           <p className="mt-3 text-[color:var(--color-ink-muted)] leading-relaxed">
@@ -33,7 +33,7 @@ export function LanguageBlocks() {
           <span className="inline-flex items-center rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)] ring-1 ring-[color:var(--color-hairline)]">
             English
           </span>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-[color:var(--color-ink)]">
+          <h2 className="mt-4 font-display text-2xl font-bold tracking-tight text-[color:var(--color-ink)]">
             {site.english.headline}
           </h2>
           <p className="mt-3 text-[color:var(--color-ink-muted)] leading-relaxed">

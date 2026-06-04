@@ -45,7 +45,7 @@ export function InspectionCard({
         className="w-full max-w-lg rounded-t-3xl bg-[color:var(--color-parchment)] p-6 shadow-2xl ring-1 ring-black/10 sm:rounded-3xl"
       >
         <div className="flex items-start justify-between gap-4">
-          <h2 className="text-2xl font-bold text-[color:var(--color-bark)]">
+          <h2 className="font-display text-2xl font-bold text-[color:var(--color-bark)]">
             {category.name}
           </h2>
           <button
@@ -57,6 +57,7 @@ export function InspectionCard({
             ✕
           </button>
         </div>
+        <div className="mt-3 h-px w-12 bg-[color:var(--color-coral)]/40" aria-hidden />
         <p className="mt-3 text-[#5b4631]">{category.blurb}</p>
         <p className="mt-3 text-sm text-[#5b4631]">
           <strong>Det här hittar du:</strong> {category.whatYoullFind}

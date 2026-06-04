@@ -73,7 +73,7 @@ export function LocalizedInfoPage({ locale }: { locale: Locale }) {
           <LanguageSwitcher current={locale} />
         </div>
         <div>
-          <h1 className="text-3xl font-extrabold leading-tight text-[color:var(--color-bark)] sm:text-4xl">
+          <h1 className="font-display text-3xl font-extrabold leading-tight text-[color:var(--color-bark)] sm:text-4xl">
             {t.headline}
           </h1>
           <p className="mt-3 text-lg text-[color:var(--color-ink-muted)]">{t.intro}</p>

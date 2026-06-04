@@ -14,7 +14,7 @@ export function VisitInfo() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)]">
             Besök oss
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[color:var(--color-ink)]">
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[color:var(--color-ink)]">
             Praktisk information
           </h2>
         </div>
@@ -64,7 +64,7 @@ export function VisitInfo() {
               href={site.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--color-coral)] px-7 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-pill)] transition-all hover:bg-[color:var(--color-coral-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(255,56,92,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-coral)] focus-visible:ring-offset-2"
+              className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--color-coral)] px-7 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-pill)] transition-all hover:bg-[color:var(--color-coral-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(223,84,64,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-coral)] focus-visible:ring-offset-2"
               onClick={() =>
                 trackEvent(Events.MAP_CLICK, { location: "practical_info" })
               }

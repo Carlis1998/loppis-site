@@ -8,7 +8,7 @@ export function FAQ() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)]">
             Frågor &amp; svar
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[color:var(--color-ink)]">
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[color:var(--color-ink)]">
             Vanliga frågor
           </h2>
         </div>

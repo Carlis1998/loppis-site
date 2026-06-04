@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Figtree, Fraunces } from "next/font/google";
 import "./globals.css";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { site } from "@/content/site";
@@ -10,6 +10,17 @@ const figtree = Figtree({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-figtree",
+  display: "swap",
+});
+
+// Display face for the big editorial moments (hero + section headings). Fraunces
+// is a warm, old-style optical serif — its vintage character suits a courtyard
+// flea market and pairs against Figtree's clean grotesque for body/UI.
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -63,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sv" className={figtree.variable}>
+    <html lang="sv" className={`${figtree.variable} ${fraunces.variable}`}>
       <head>
         <link
           rel="alternate"
