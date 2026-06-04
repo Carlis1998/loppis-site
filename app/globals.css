@@ -149,7 +149,9 @@ html {
 
 body {
   overflow-x: clip;
-  background: var(--color-surface);
+  /* Warm page canvas (not stark #fff) so any area behind the scene/splash or
+     between sections belongs to the courtyard rather than flashing white. */
+  background: var(--color-surface-warm);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

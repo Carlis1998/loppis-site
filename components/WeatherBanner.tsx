@@ -29,7 +29,7 @@ export function WeatherBanner({ weather }: WeatherBannerProps) {
       className={`w-full border-b text-center text-sm ${
         good
           ? "border-[color:var(--color-coral)]/20 bg-[color:var(--color-coral-soft)] text-[color:var(--color-coral)]"
-          : "border-[color:var(--color-hairline)] bg-white text-[color:var(--color-ink-muted)]"
+          : "border-[color:var(--color-hairline)] bg-[color:var(--color-surface-warm)] text-[color:var(--color-ink-muted)]"
       }`}
       aria-label="Öppningsstatus"
       aria-live="polite"
