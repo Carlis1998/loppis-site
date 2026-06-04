@@ -66,19 +66,22 @@ export function SceneObject({
           )}
         </span>
 
-        {/* Tap hint: pulsing coral dot, only while this object is un-inspected. */}
-        {!seen && (
-          <span
-            aria-hidden
-            className="pointer-events-none absolute right-1 top-1 flex h-3.5 w-3.5"
-          >
-            <span className="absolute inline-flex h-full w-full rounded-full bg-[color:var(--color-coral)] opacity-75 motion-safe:animate-ping" />
-            <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-[color:var(--color-coral)] ring-2 ring-white/85" />
+        {/* Status pip: un-inspected → a calmly pulsing coral hint; once inspected
+            → a steady coral check, so progress reads at a glance. */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute right-1 top-1 flex h-4 w-4"
+        >
+          {!seen && (
+            <span className="absolute inline-flex h-full w-full rounded-full bg-[color:var(--color-coral)] motion-safe:animate-[hint-pulse_2.4s_ease-out_infinite]" />
+          )}
+          <span className="relative inline-flex h-4 w-4 items-center justify-center rounded-full bg-[color:var(--color-coral)] text-[9px] font-bold leading-none text-white ring-2 ring-white">
+            {seen ? "✓" : ""}
           </span>
-        )}
+        </span>
       </span>
 
-      <span className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#3a2a18]/90 px-3 py-1 text-xs font-medium text-[#f7ecd8] opacity-0 shadow transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+      <span className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-[color:var(--color-bark)]/90 px-3 py-1 text-xs font-medium text-[color:var(--color-cream)] opacity-0 shadow transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
         {category.name}
         {seen ? " ✓" : ""}
       </span>

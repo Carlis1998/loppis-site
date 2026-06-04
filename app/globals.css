@@ -20,6 +20,23 @@
   --color-tag-ink: #6b5836;
   --shadow-tag: 0 2px 6px rgba(58, 42, 24, 0.18);
 
+  /* Warm cream ink — used on bark-coloured chips, tooltips and the progress badge. */
+  --color-cream: #f7ecd8;
+  /* Mid-brown body inks for the parchment inspection card (lighter than bark). */
+  --color-bark-soft: #5b4631;
+  --color-bark-faint: #80715c;
+  /* Cool slate palette — scene chrome in closed / rainy weather mode only. These
+     are deliberately blue-grey to read as "shut for bad weather" against the warm
+     open-mode courtyard. */
+  --color-slate: #1f2933;
+  --color-slate-deep: #1b2530;
+  --color-slate-panel: #2b3a4a;
+  --color-slate-ink: #3a4654;
+  --color-slate-chip-ink: #e7eef5;
+  --color-slate-mist: #eef3f8;
+  --color-slate-cloud: #cdd8e3;
+  --color-amber-glow: #ffd9a8;
+
   /* Display = Fraunces (vintage serif) for hero + headings; body/UI stays Figtree. */
   --font-display:
     var(--font-fraunces), Georgia, "Times New Roman", serif;
@@ -27,12 +44,37 @@
     var(--font-figtree), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
 
-  --shadow-card: 0 6px 16px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.11);
+  /* Bark-tinted card shadows so panels cast a warm courtyard shadow, not a cool grey one. */
+  --shadow-card: 0 6px 16px rgba(58, 42, 24, 0.08);
+  --shadow-card-hover: 0 12px 28px rgba(58, 42, 24, 0.14);
   --shadow-pill: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Coral lift for hovered primary CTAs (single-sourced, was inline in VisitInfo). */
+  --shadow-coral-lift: 0 10px 24px rgba(223, 84, 64, 0.28);
 
   --color-parchment: #fbf3e3;
   --color-bark: #3a2a18;
+
+  /* ---- "One continuous world" ---- */
+  /* The ground the whole page-below-the-scene sits on. Warms at the top (carries
+     the courtyard's sunlight) and deepens toward dusk at the footer, so the page
+     reads as one place fading to evening rather than stacked white sections. */
+  --color-ground-top: #fdf6ea;
+  --color-ground-mid: #f6ead2;
+  --color-ground-dusk: #ecdcbe;
+  /* Warm-dark chalkboard for the FAQ. Deliberately olive-charcoal, NOT the slate
+     palette — slate means "closed for bad weather" in the scene's visual language. */
+  --color-chalk: #33392f;
+  --color-chalk-deep: #262b22;
+  --color-chalk-ink: #f1efe2;
+  --color-chalk-faint: #c2c4ad;
+  /* Translucent masking-tape + jute string for pinned notes / hang-tags. */
+  --color-tape: #ece0c4;
+  --color-string: #b7a079;
+
+  /* Paper grain overlaid on the ground. SVG fractal-noise fallback — adds zero
+     network bytes. Swap this one token to url("/textures/paper-grain.png") once the
+     optional texture from docs/asset-brief-continuous-world.md is dropped in. */
+  --texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -66,11 +108,47 @@
   }
 }
 
+/* Inspection card entrance: panel rises, backdrop fades in. */
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tap-hint halo: a calmer, slower expand-and-fade than Tailwind's animate-ping. */
+@keyframes hint-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
+  overflow-x: clip;
   background: var(--color-surface);
   color: var(--color-ink);
   font-family: var(--font-sans);
@@ -84,6 +162,55 @@ body {
 }
 
 ::selection {
-  background: var(--color-coral);
+  /* coral-hover (darker) clears AA contrast against white selected text. */
+  background: var(--color-coral-hover);
   color: #fff;
+}
+
+/* ---- "One continuous world" ---------------------------------------------
+   A single warm ground beneath the whole page-below-the-scene. The vertical
+   gradient carries the courtyard's sunlight at the top and settles to dusk at
+   the footer; the ::before lays an almost-invisible paper grain over all of it.
+   Sections inside drop their own opaque backgrounds so this shows through. */
+.world {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(
+    180deg,
+    var(--color-ground-top) 0%,
+    var(--color-ground-mid) 52%,
+    var(--color-ground-dusk) 100%
+  );
+}
+.world::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: var(--texture-grain);
+  background-size: 200px 200px;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+
+/* Market-stall awning: two-tone scalloped valance pinned to the top of each
+   catalogue stall. The scallop is drawn with a radial-gradient mask — no asset. */
+.stall-awning {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-coral) 0 22px,
+    var(--color-cream) 22px 44px
+  );
+}
+.stall-awning::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -9px 0;
+  height: 10px;
+  background: inherit;
+  -webkit-mask: radial-gradient(11px at 11px 0, transparent 0 11px, #000 12px)
+    0 0 / 22px 10px repeat-x;
+  mask: radial-gradient(11px at 11px 0, transparent 0 11px, #000 12px) 0 0 /
+    22px 10px repeat-x;
 }

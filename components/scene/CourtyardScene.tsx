@@ -100,7 +100,15 @@ export function CourtyardScene({
       className="relative mx-auto aspect-[3/4] w-full overflow-hidden sm:aspect-[16/9]"
     >
       {bgProvided || bgFallbackProvided ? (
-        <Image src={bgSrc} alt="" fill priority className="object-cover" sizes="100vw" />
+        <Image
+          key={closed ? "bg-closed" : "bg-open"}
+          src={bgSrc}
+          alt=""
+          fill
+          priority
+          className="object-cover motion-safe:animate-[backdrop-in_0.45s_ease-out]"
+          sizes="100vw"
+        />
       ) : (
         <BackgroundPlaceholder />
       )}
@@ -124,10 +132,10 @@ export function CourtyardScene({
         onClick={onChipTap}
         title={t.toggleHint}
         aria-label={t.toggleHint}
-        className={`absolute left-3 top-3 z-20 flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold shadow backdrop-blur transition ${
+        className={`absolute left-3 top-3 z-20 flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold shadow backdrop-blur transition motion-safe:active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-coral)] focus-visible:ring-offset-2 focus-visible:ring-offset-black/30 ${
           closed
-            ? "bg-[#1f2933]/80 text-[#e7eef5]"
-            : "bg-[color:var(--color-bark)]/80 text-[#f7ecd8]"
+            ? "bg-[color:var(--color-slate)]/80 text-[color:var(--color-slate-chip-ink)]"
+            : "bg-[color:var(--color-bark)]/80 text-[color:var(--color-cream)]"
         }`}
       >
         <span aria-hidden>{closed ? "🌧️" : "☀️"}</span>
@@ -141,7 +149,7 @@ export function CourtyardScene({
 
       <p
         aria-live="polite"
-        className="absolute left-1/2 top-3 z-10 -translate-x-1/2 rounded-full bg-[color:var(--color-bark)]/80 px-4 py-1.5 text-xs font-medium text-[#f7ecd8] shadow"
+        className="absolute right-3 top-3 z-10 rounded-full bg-[color:var(--color-bark)]/80 px-4 py-1.5 text-xs font-medium text-[color:var(--color-cream)] shadow sm:left-1/2 sm:right-auto sm:-translate-x-1/2"
       >
         {t.progress(seen.size, categories.length)}
       </p>
@@ -149,15 +157,15 @@ export function CourtyardScene({
       {/* Closed banner, clearly shut, still over a tappable scene */}
       {closed && (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-4 pb-5">
-          <div className="pointer-events-auto max-w-md rounded-2xl bg-[#1b2530]/85 px-5 py-4 text-center text-[#eef3f8] shadow-2xl ring-1 ring-white/10 backdrop-blur">
+          <div className="pointer-events-auto max-w-md rounded-2xl bg-[color:var(--color-slate-deep)]/85 px-5 py-4 text-center text-[color:var(--color-slate-mist)] shadow-2xl ring-1 ring-white/10 backdrop-blur">
             <p
               className="text-base font-bold motion-safe:animate-[sign-swing_3.5s_ease-in-out_infinite]"
               style={{ transformOrigin: "top center" }}
             >
               🚪 {t.closedTitle}
             </p>
-            <p className="mt-1 text-sm text-[#cdd8e3]">{t.closedLead}</p>
-            <p className="mt-2 text-sm font-medium text-[#ffd9a8]">
+            <p className="mt-1 text-sm text-[color:var(--color-slate-cloud)]">{t.closedLead}</p>
+            <p className="mt-2 text-sm font-medium text-[color:var(--color-amber-glow)]">
               {weekday ? t.nextGood(weekday) : t.nextGoodUnknown}
             </p>
           </div>

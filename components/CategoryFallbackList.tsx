@@ -13,21 +13,28 @@ export function CategoryFallbackList() {
     <section
       id="kategorier"
       aria-label="Vad som säljs på loppisen"
-      className="mx-auto max-w-5xl px-6 py-16"
+      className="mx-auto max-w-5xl px-6 py-20 md:py-24"
     >
+      <div
+        className="mx-auto mb-5 h-1 w-12 rounded-full bg-[color:var(--color-tag)]"
+        aria-hidden
+      />
       <p className="text-center text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
         Sortiment
       </p>
-      <h1 className="mt-3 text-center font-display text-3xl font-bold tracking-tight md:text-4xl">
+      <h2 className="mt-3 text-center font-display text-3xl font-bold tracking-tight md:text-4xl">
         Innegårdsloppis i Visby nära Södertorg
-      </h1>
+      </h2>
       <p className="mx-auto mt-3 max-w-2xl text-center text-[color:var(--color-ink-muted)]">
         {site.subheadline}
       </p>
       <ul className="mt-12 grid gap-6 sm:grid-cols-2">
         {categories.map((c, i) => (
           <li key={c.id} className="group">
-            <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-[color:var(--color-surface-warm)] shadow-[var(--shadow-card)] ring-1 ring-[color:var(--color-hairline)] transition duration-300 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:shadow-[var(--shadow-card-hover)]">
+            <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-[color:var(--color-surface-warm)] shadow-[var(--shadow-card)] ring-1 ring-[color:var(--color-bark)]/10 transition duration-300 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:shadow-[var(--shadow-card-hover)]">
+              {/* Striped market-stall awning with a scalloped lower edge — turns
+                  the card into a stall pitched on the courtyard ground. */}
+              <div className="stall-awning relative z-10 h-3 w-full" aria-hidden />
               {c.photos[0] && (
                 <div className="relative">
                   <div className="relative h-48 overflow-hidden">
@@ -55,7 +62,7 @@ export function CategoryFallbackList() {
                 </div>
               )}
               <div className="flex flex-1 flex-col p-6 pt-7">
-                <h3 className="font-display text-xl font-bold tracking-tight text-[color:var(--color-ink)]">
+                <h3 className="font-display text-xl md:text-2xl font-extrabold tracking-tight text-[color:var(--color-ink)]">
                   {c.name}
                 </h3>
                 <p className="mt-2 text-[color:var(--color-ink-muted)] leading-relaxed">

@@ -3,11 +3,11 @@ import { site } from "@/content/site";
 
 export function LanguageBlocks() {
   return (
-    <section className="bg-white px-6 py-20 md:py-24">
+    <section className="px-6 py-20 md:py-24">
       <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
         <article
           lang="de"
-          className="rounded-3xl bg-[color:var(--color-surface-alt)] p-8 md:p-10 ring-1 ring-[color:var(--color-hairline)]"
+          className="rounded-3xl bg-[color:var(--color-surface-warm)] p-8 md:p-10 shadow-[var(--shadow-card)] ring-1 ring-[color:var(--color-bark)]/10"
         >
           <span className="inline-flex items-center rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)] ring-1 ring-[color:var(--color-hairline)]">
             Deutsch
@@ -28,7 +28,7 @@ export function LanguageBlocks() {
         </article>
         <article
           lang="en"
-          className="rounded-3xl bg-[color:var(--color-surface-alt)] p-8 md:p-10 ring-1 ring-[color:var(--color-hairline)]"
+          className="rounded-3xl bg-[color:var(--color-surface-warm)] p-8 md:p-10 shadow-[var(--shadow-card)] ring-1 ring-[color:var(--color-bark)]/10"
         >
           <span className="inline-flex items-center rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)] ring-1 ring-[color:var(--color-hairline)]">
             English

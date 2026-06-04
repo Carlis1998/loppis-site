@@ -90,6 +90,14 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans bg-white text-[color:var(--color-ink)]">
+        {/* Keyboard skip link: hidden until focused, then jumps past the scene to
+            the main content (which carries id="main" tabIndex={-1}). */}
+        <a
+          href="#main"
+          className="sr-only z-[100] focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-full focus:bg-[color:var(--color-coral)] focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white focus:shadow-[var(--shadow-pill)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-coral)]"
+        >
+          Hoppa till innehåll
+        </a>
         <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>

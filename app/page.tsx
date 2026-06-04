@@ -82,7 +82,12 @@ export default async function HomePage() {
   const weather = await getWeatherStatus();
 
   return (
-    <main>
+    <main id="main" tabIndex={-1}>
+      {/* Page-level H1. Visually hidden because the courtyard scene is the visual
+          opener, but screen readers and search engines get an unambiguous page
+          title at the top of the document outline. The catalogue heading below is
+          an H2. */}
+      <h1 className="sr-only">{site.siteName}</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -105,11 +110,17 @@ export default async function HomePage() {
           nextGoodDate: weather.nextGoodDate,
         }}
       />
-      <CategoryFallbackList />
-      <VisitInfo />
-      <LanguageBlocks />
-      <FAQ />
-      <footer className="border-t border-[color:var(--color-hairline)] bg-white px-6 py-10 text-center text-sm text-[color:var(--color-ink-muted)]">
+      {/* One continuous "ground": the catalogue, visit notice-board, language
+          notes and FAQ all sit on a single warm gradient that deepens to dusk at
+          the footer — so the page reads as one place, not stacked white sections.
+          Purely presentational; every heading, address and Q&A inside stays real,
+          crawlable HTML. */}
+      <div className="world">
+        <CategoryFallbackList />
+        <VisitInfo />
+        <LanguageBlocks />
+        <FAQ />
+        <footer className="border-t border-[color:var(--color-bark)]/10 px-6 py-10 text-center text-sm text-[color:var(--color-bark-faint)]">
         <p className="flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
           <span className="font-semibold text-[color:var(--color-ink)]">
             Innegårdsloppis
@@ -130,7 +141,8 @@ export default async function HomePage() {
             Visa på karta
           </a>
         </p>
-      </footer>
+        </footer>
+      </div>
       <AmbientAudio />
       <ScrollTracker />
     </main>
