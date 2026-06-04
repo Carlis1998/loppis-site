@@ -12,6 +12,13 @@
   --color-hairline: #e9e3d9;
   --color-surface: #ffffff;
   --color-surface-alt: #f8f5ef;
+  /* Warm off-white for cards, so panels carry the courtyard's warmth instead of
+     dropping to stark white below the scene. */
+  --color-surface-warm: #fdf9f1;
+  /* Manila kraft hang-tag — the flea-market price tag. Warm card stock + bark ink. */
+  --color-tag: #efe3c8;
+  --color-tag-ink: #6b5836;
+  --shadow-tag: 0 2px 6px rgba(58, 42, 24, 0.18);
 
   /* Display = Fraunces (vintage serif) for hero + headings; body/UI stays Figtree. */
   --font-display:
